@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Sector Exposure to the AI Infrastructure Bubble</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome for clean typography and UI iconography -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0A192F',
+                            card: '#112240',
+                            accent: '#64FFDA',
+                            blue: '#0077B6',
+                            brightBlue: '#00B4D8',
+                            orange: '#FF6B6B',
+                            yellow: '#FFD166',
+                            text: '#E6F1FF',
+                            textMuted: '#8892B0',
+                            border: '#233554'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0A192F;
+            color: #E6F1FF;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 360px;
+            }
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0A192F;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #233554;
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #00B4D8;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar antialiased min-h-screen pb-12">
+
+    <!-- Header & Hero Section -->
+    <header class="border-b border-brand-border bg-brand-dark/90 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="p-2 bg-brand-brightBlue/10 rounded-lg text-brand-accent">
+                    <i class="fa-solid me-1 fa-diagram-project text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-white tracking-wide">Banking Exposure to AI Risks</h1>
+                    <p class="text-xs text-brand-textMuted">Systemic Risk Analysis & Exposure Infographic</p>
+                </div>
+            </div>
+            <nav class="flex flex-wrap gap-2 text-xs font-semibold">
+                <a href="#kpi-summary" class="px-3 py-1.5 rounded-full bg-brand-card hover:bg-brand-border text-brand-accent transition">Overview</a>
+                <a href="#bulge-bracket" class="px-3 py-1.5 rounded-full bg-brand-card hover:bg-brand-border text-brand-textMuted hover:text-white transition">Bulge Bracket</a>
+                <a href="#regional-banks" class="px-3 py-1.5 rounded-full bg-brand-card hover:bg-brand-border text-brand-textMuted hover:text-white transition">Regional & C&I</a>
+                <a href="#hardware-depreciation" class="px-3 py-1.5 rounded-full bg-brand-card hover:bg-brand-border text-brand-textMuted hover:text-white transition">Hardware Risk</a>
+                <a href="#circular-financing" class="px-3 py-1.5 rounded-full bg-brand-card hover:bg-brand-border text-brand-textMuted hover:text-white transition">Shadow Banking</a>
+                <a href="#stress-testing" class="px-3 py-1.5 rounded-full bg-brand-card hover:bg-brand-border text-brand-textMuted hover:text-white transition">Stress Tests</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-12">
+
+        <!-- Executive Narrative & Top KPIs -->
+        <section id="kpi-summary" class="space-y-6">
+            <div class="bg-brand-card border border-brand-border rounded-xl p-6 sm:p-8 shadow-xl">
+                <span class="text-brand-accent text-xs font-bold uppercase tracking-wider block mb-2">Executive Summary</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">The $1+ Trillion AI Buildout & The Banking Sector</h2>
+                <p class="text-brand-textMuted leading-relaxed max-w-4xl">
+                    As hyperscaler tech giants transition from equity-financed experimentation to a heavily leveraged physical infrastructure buildout, global commercial banks, Japanese megabanks, and regional lenders are now deeply bound to the financial sustainability of the AI ecosystem. From direct syndicated loans to off-balance-sheet SPVs and unfunded credit lines, banking balance sheets face structural vulnerability to monetization shortfalls, power bottlenecks, and rapid hardware depreciation.
+                </p>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-brand-card border border-brand-border rounded-xl p-5 hover:border-brand-accent/50 transition">
+                    <div class="text-brand-textMuted text-xs font-semibold uppercase mb-1">Projected Big Tech CapEx (2026)</div>
+                    <div class="text-3xl font-extrabold text-white">$690B</div>
+                    <div class="text-xs text-brand-accent mt-2"><i class="fa-solid fa-arrow-trend-up mr-1"></i>Reaching $870B by 2027</div>
+                </div>
+                <div class="bg-brand-card border border-brand-border rounded-xl p-5 hover:border-brand-accent/50 transition">
+                    <div class="text-brand-textMuted text-xs font-semibold uppercase mb-1">Committed C&I Exposure</div>
+                    <div class="text-3xl font-extrabold text-brand-yellow">$450B</div>
+                    <div class="text-xs text-brand-textMuted mt-2">Averages 25% of Tier 1 Capital</div>
+                </div>
+                <div class="bg-brand-card border border-brand-border rounded-xl p-5 hover:border-brand-accent/50 transition">
+                    <div class="text-brand-textMuted text-xs font-semibold uppercase mb-1">Hyperscaler Off-Balance Leases</div>
+                    <div class="text-3xl font-extrabold text-brand-brightBlue">$660B</div>
+                    <div class="text-xs text-brand-textMuted mt-2">Out of $970B total lease obligations</div>
+                </div>
+                <div class="bg-brand-card border border-brand-border rounded-xl p-5 hover:border-brand-accent/50 transition">
+                    <div class="text-brand-textMuted text-xs font-semibold uppercase mb-1">IMF Stressed "Weak" Bank Assets</div>
+                    <div class="text-3xl font-extrabold text-brand-orange">22%</div>
+                    <div class="text-xs text-brand-orange mt-2"><i class="fa-solid fa-triangle-exclamation mr-1"></i>Up from 18% baseline</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Bulge Bracket Exposure & Syndication -->
+        <section id="bulge-bracket" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-5 space-y-4">
+                <div class="inline-block px-3 py-1 bg-brand-brightBlue/10 text-brand-brightBlue rounded-full text-xs font-bold">Primary Underwriting</div>
+                <h3 class="text-2xl font-bold text-white">Bulge Bracket & Syndication Exposure</h3>
+                <p class="text-brand-textMuted text-sm leading-relaxed">
+                    Global Systemically Important Banks (G-SIBs) lead the syndication and debt underwriting for large-scale data center facilities and corporate bond issuances. To insulate their balance sheets, top institutions utilize "best-efforts" syndication and Significant Risk Transfers (SRTs), yet remain heavily exposed to warehousing and deal friction.
+                </p>
+                <div class="bg-brand-card border border-brand-border rounded-lg p-4 space-y-3">
+                    <h4 class="text-xs font-bold text-brand-accent uppercase tracking-wider">Key Underwriting Snapshot</h4>
+                    <div class="flex justify-between items-center text-xs border-b border-brand-border/60 pb-2">
+                        <span class="text-white font-medium">Goldman Sachs</span>
+                        <span class="text-brand-brightBlue font-bold">$16.5B (48+ Deals)</span>
+                    </div>
+                    <div class="flex justify-between items-center text-xs border-b border-brand-border/60 pb-2">
+                        <span class="text-white font-medium">JPMorgan Chase</span>
+                        <span class="text-brand-brightBlue font-bold">$13.3B+ Direct/Arranged</span>
+                    </div>
+                    <div class="flex justify-between items-center text-xs border-b border-brand-border/60 pb-2">
+                        <span class="text-white font-medium">Morgan Stanley</span>
+                        <span class="text-brand-brightBlue font-bold">$30B Single-Day Meta Bond</span>
+                    </div>
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-white font-medium">Volta Infrastructure Co-Lead</span>
+                        <span class="text-brand-orange font-bold">$3.7B "Best-Efforts" GPU Paper</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-brand-card border border-brand-border rounded-xl p-6 shadow-xl">
+                <h4 class="text-base font-bold text-white mb-2">Bulge Bracket AI Infrastructure Exposure & Deals</h4>
+                <p class="text-xs text-brand-textMuted mb-4">Comparison of estimated multi-billion dollar debt exposure and project involvement across major Wall Street institutions.</p>
+                <div class="chart-container">
+                    <canvas id="bulgeBracketChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Regional Banks & C&I Risk -->
+        <section id="regional-banks" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-7 bg-brand-card border border-brand-border rounded-xl p-6 shadow-xl order-2 lg:order-1">
+                <h4 class="text-base font-bold text-white mb-2">Regional Bank C&I Credit Line Commitment Gap ($B)</h4>
+                <p class="text-xs text-brand-textMuted mb-4">Visualization of drawn vs. total committed Commercial & Industrial exposure highlighting potential pre-default liquidity drawdowns.</p>
+                <div class="chart-container">
+                    <canvas id="regionalBankChart"></canvas>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 space-y-4 order-1 lg:order-2">
+                <div class="inline-block px-3 py-1 bg-brand-yellow/10 text-brand-yellow rounded-full text-xs font-bold">Commercial Real Estate & C&I</div>
+                <h3 class="text-2xl font-bold text-white">Regional Bank Vulnerabilities</h3>
+                <p class="text-brand-textMuted text-sm leading-relaxed">
+                    While drawn C&I balances account for roughly 9% of Tier 1 Capital, aggregate committed credit lines average <strong>25% of Tier 1 Capital</strong>. In periods of stress, distressed technology borrowers systematically execute 100% credit line drawdowns before entering delinquency, rapidly loading liabilities onto bank balance sheets.
+                </p>
+                <div class="p-4 bg-brand-card border border-brand-border rounded-lg space-y-2">
+                    <div class="flex items-center space-x-2 text-brand-orange text-xs font-bold">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span>Software Sector "SaaS-pocalypse" Risk</span>
+                    </div>
+                    <p class="text-xs text-brand-textMuted">
+                        Of the $191B committed to software publishers, <strong>$50B (26%)</strong> is rated B-minus or below. Revenue erosion from AI software tools threatens debt service capacity.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Hardware Collateral & Depreciation Mismatch -->
+        <section id="hardware-depreciation" class="bg-brand-card border border-brand-border rounded-xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="max-w-3xl">
+                <span class="text-brand-accent text-xs font-bold uppercase tracking-wider block mb-1">Venture Debt & Neocloud Collateral</span>
+                <h3 class="text-2xl font-bold text-white">The GPU Collateral Erosion Trap</h3>
+                <p class="text-brand-textMuted text-sm mt-2 leading-relaxed">
+                    Lenders underwrite hardware-collateralized facilities (e.g., CoreWeave, Lambda Labs) using standard 5-to-6 year accounting depreciation schedules. However, rapid annual GPU microarchitecture releases compress true economic utility to just 2-3 years, creating a severe collateral shortfall during a default event.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7">
+                    <div class="chart-container">
+                        <canvas id="gpuDepreciationChart"></canvas>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="p-4 rounded-lg bg-brand-dark border border-brand-border">
+                        <div class="text-xs text-brand-accent font-bold mb-1">Accounting Depreciation (5 Years)</div>
+                        <p class="text-xs text-brand-textMuted">Linear reduction assuming extended hardware operational utility across enterprise compute clusters.</p>
+                    </div>
+                    <div class="p-4 rounded-lg bg-brand-dark border border-brand-border">
+                        <div class="text-xs text-brand-orange font-bold mb-1">Real Market Value (3-Year Cadence)</div>
+                        <p class="text-xs text-brand-textMuted">Sharp drops driven by new chip architecture releases, leaving an expanding uncovered deficit for lenders.</p>
+                    </div>
+                    <div class="p-4 rounded-lg bg-brand-dark border border-brand-border">
+                        <div class="text-xs text-brand-yellow font-bold mb-1">Yield Spread Tiering</div>
+                        <p class="text-xs text-brand-textMuted">Speculative neocloud facilities command spreads above <strong>SOFR + 5.50% (>10.4% yield)</strong> reflecting this severe collateral risk.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Circular Financing Flow & Shadow Banking -->
+        <section id="circular-financing" class="space-y-6">
+            <div class="bg-brand-card border border-brand-border rounded-xl p-6 sm:p-8 shadow-xl">
+                <div class="max-w-3xl mb-8">
+                    <span class="text-brand-brightBlue text-xs font-bold uppercase tracking-wider block mb-1">Interconnectedness & NBFIs</span>
+                    <h3 class="text-2xl font-bold text-white">The $1.4 Trillion Circular Financing Loop</h3>
+                    <p class="text-brand-textMuted text-sm mt-2 leading-relaxed">
+                        Hyperscalers inject equity and debt into emerging AI labs and neoclouds, which in turn sign binding commitments to purchase compute back from hyperscalers. Private credit funds and commercial banks backstop this system via warehouse lines and GPU debt facilities.
+                    </p>
+                </div>
+
+                <!-- Structured HTML/CSS Flowchart (NO SVG / NO MERMAID) -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+                    <!-- Step 1 -->
+                    <div class="bg-brand-dark border border-brand-border p-5 rounded-lg flex flex-col justify-between space-y-3 relative">
+                        <div>
+                            <div class="w-8 h-8 rounded-full bg-brand-brightBlue/20 text-brand-brightBlue flex items-center justify-center font-bold text-sm mb-3">1</div>
+                            <h4 class="text-white font-bold text-sm">Hyperscalers</h4>
+                            <p class="text-brand-textMuted text-xs mt-1">$300B Equity & $650B Debt injected into startups and neoclouds.</p>
+                        </div>
+                        <div class="text-brand-accent text-xs font-semibold flex items-center">
+                            <span>Outflow Capital</span>
+                            <i class="fa-solid fa-arrow-right ml-auto hidden md:block"></i>
+                            <i class="fa-solid fa-arrow-down mx-auto md:hidden mt-2"></i>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-brand-dark border border-brand-border p-5 rounded-lg flex flex-col justify-between space-y-3 relative">
+                        <div>
+                            <div class="w-8 h-8 rounded-full bg-brand-yellow/20 text-brand-yellow flex items-center justify-center font-bold text-sm mb-3">2</div>
+                            <h4 class="text-white font-bold text-sm">AI Labs & Neoclouds</h4>
+                            <p class="text-brand-textMuted text-xs mt-1">Pledge GPUs & contracts to secure debt; commit $1.4T back in compute orders.</p>
+                        </div>
+                        <div class="text-brand-yellow text-xs font-semibold flex items-center">
+                            <span>Leveraged Contracts</span>
+                            <i class="fa-solid fa-arrow-right ml-auto hidden md:block"></i>
+                            <i class="fa-solid fa-arrow-down mx-auto md:hidden mt-2"></i>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-brand-dark border border-brand-border p-5 rounded-lg flex flex-col justify-between space-y-3 relative">
+                        <div>
+                            <div class="w-8 h-8 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center font-bold text-sm mb-3">3</div>
+                            <h4 class="text-white font-bold text-sm">Private Credit & BDCs</h4>
+                            <p class="text-brand-textMuted text-xs mt-1">$200B+ AI infrastructure debt; BDCs hold $115B middle-market tech software loans.</p>
+                        </div>
+                        <div class="text-brand-orange text-xs font-semibold flex items-center">
+                            <span>Warehouse Lines</span>
+                            <i class="fa-solid fa-arrow-right ml-auto hidden md:block"></i>
+                            <i class="fa-solid fa-arrow-down mx-auto md:hidden mt-2"></i>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-brand-dark border border-brand-border p-5 rounded-lg flex flex-col justify-between space-y-3 relative">
+                        <div>
+                            <div class="w-8 h-8 rounded-full bg-brand-accent/20 text-brand-accent flex items-center justify-center font-bold text-sm mb-3">4</div>
+                            <h4 class="text-white font-bold text-sm">Commercial Banks</h4>
+                            <p class="text-brand-textMuted text-xs mt-1">Provide foundation leverage & credit facilities to private funds. Suffer tail risk if loop breaks.</p>
+                        </div>
+                        <div class="text-brand-accent text-xs font-semibold flex items-center">
+                            <span>Systemic Foundation</span>
+                            <i class="fa-solid fa-rotate-left ml-auto"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: IMF Stress Test & Multi-Stage Loss Cascade -->
+        <section id="stress-testing" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-5 space-y-4">
+                <div class="inline-block px-3 py-1 bg-brand-orange/10 text-brand-orange rounded-full text-xs font-bold">Macro Scenario Analysis</div>
+                <h3 class="text-2xl font-bold text-white">IMF Stress Testing & Systemic Vulnerability</h3>
+                <p class="text-brand-textMuted text-sm leading-relaxed">
+                    The IMF global financial stability stress test models a combined scenario of weaker-than-expected AI monetization, high interest rates, and grid capacity constraints. Under this stress, global bank assets in a "weak" capital state increase significantly.
+                </p>
+                <div class="p-4 bg-brand-card border border-brand-border rounded-lg space-y-3">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">Multi-Stage Loss Transmission Sequence</h4>
+                    <ol class="text-xs text-brand-textMuted space-y-2 list-decimal list-inside">
+                        <li><strong class="text-white">Monetization Shortfall:</strong> Software startup defaults trigger lease cancellations across specialized data centers.</li>
+                        <li><strong class="text-white">Foreclosure & Carrying Costs:</strong> Banks take possession of unenergized campuses, facing high site maintenance and environmental liabilities.</li>
+                        <li><strong class="text-white">Automated Line Drawdowns:</strong> Corporate borrowers draw down $300B in unused credit lines, depleting capital buffers.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-brand-card border border-brand-border rounded-xl p-6 shadow-xl">
+                <h4 class="text-base font-bold text-white mb-2">Global Banking Assets in "Weak" Capital State (%)</h4>
+                <p class="text-xs text-brand-textMuted mb-4">Proportion of global banking assets with Tier 1 Capital ratios dropping below 7% under stress testing.</p>
+                <div class="chart-container">
+                    <canvas id="stressTestChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-6 border-t border-brand-border flex flex-col sm:flex-row justify-between items-center text-xs text-brand-textMuted gap-4">
+        <div>
+            <p>© 2026 Financial Stability Analysis Division. Based on IMF, Fed, and Supervisory Data.</p>
+        </div>
+        <div class="flex space-x-4">
+            <span class="hover:text-white transition cursor-pointer">Methodology</span>
+            <span class="hover:text-white transition cursor-pointer">Risk Metrics</span>
+            <span class="hover:text-white transition cursor-pointer">Data Sources</span>
+        </div>
+    </footer>
+
+    <!-- Chart Configuration Script -->
+    <script>
+        // Set Chart.js Defaults for Dark Theme
+        Chart.defaults.color = '#8892B0';
+        Chart.defaults.font.family = "system-ui, -apple-system, sans-serif";
+        Chart.defaults.plugins.legend.labels.usePointStyle = true;
+
+        // Label Wrapping Helper Logic (16 Character Max Threshold)
+        function wrapLabel(label) {
+            if (typeof label !== 'string') return label;
+            if (label.length <= 16) return label;
+            
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > 16) {
+                    if (currentLine) lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine += (currentLine ? ' ' : '') + word;
+                }
+            });
+            if (currentLine) lines.push(currentLine.trim());
+            return lines;
+        }
+
+        // Shared Tooltip Callback Logic
+        const sharedTooltipCallback = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // 1. Bulge Bracket Chart
+        const bulgeBracketRawLabels = ['Goldman Sachs (Arranged)', 'JPMorgan Chase (Direct)', 'Morgan Stanley (Meta Bond)', 'Volta Project (Co-Lead)'];
+        const bulgeBracketLabels = bulgeBracketRawLabels.map(wrapLabel);
+
+        const ctxBulge = document.getElementById('bulgeBracketChart').getContext('2d');
+        new Chart(ctxBulge, {
+            type: 'bar',
+            data: {
+                labels: bulgeBracketLabels,
+                datasets: [{
+                    label: 'Exposure Volume ($B)',
+                    data: [16.5, 13.3, 30.0, 5.0],
+                    backgroundColor: '#00B4D8',
+                    borderColor: '#64FFDA',
+                    borderWidth: 1,
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: sharedTooltipCallback
+                },
+                scales: {
+                    x: {
+                        grid: { color: '#233554' },
+                        ticks: { color: '#8892B0', font: { size: 10 } }
+                    },
+                    y: {
+                        grid: { color: '#233554' },
+                        ticks: { color: '#8892B0' },
+                        title: { display: true, text: 'USD Billions ($B)', color: '#8892B0' }
+                    }
+                }
+            }
+        });
+
+        // 2. Regional Bank C&I Chart
+        const regionalRawLabels = ['Aggregate AI-Adjacent C&I', 'Software & Computer Services', 'Energy & Semiconductor C&I'];
+        const regionalLabels = regionalRawLabels.map(wrapLabel);
+
+        const ctxRegional = document.getElementById('regionalBankChart').getContext('2d');
+        new Chart(ctxRegional, {
+            type: 'bar',
+            data: {
+                labels: regionalLabels,
+                datasets: [
+                    {
+                        label: 'Currently Drawn Balance ($B)',
+                        data: [150.0, 60.0, 40.0],
+                        backgroundColor: '#0077B6',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Unfunded Committed Exposure ($B)',
+                        data: [300.0, 131.0, 120.0],
+                        backgroundColor: '#FFD166',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: sharedTooltipCallback
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                        grid: { color: '#233554' }
+                    },
+                    y: {
+                        stacked: true,
+                        grid: { color: '#233554' },
+                        title: { display: true, text: 'USD Billions ($B)', color: '#8892B0' }
+                    }
+                }
+            }
+        });
+
+        // 3. Hardware Collateral Depreciation Chart
+        const gpuDepreciationRawLabels = ['Year 0 (Purchase)', 'Year 1', 'Year 2 (New Gen Launch)', 'Year 3', 'Year 4', 'Year 5'];
+        const gpuDepreciationLabels = gpuDepreciationRawLabels.map(wrapLabel);
+
+        const ctxGpu = document.getElementById('gpuDepreciationChart').getContext('2d');
+        new Chart(ctxGpu, {
+            type: 'line',
+            data: {
+                labels: gpuDepreciationLabels,
+                datasets: [
+                    {
+                        label: 'Standard Accounting Book Value',
+                        data: [100, 80, 60, 40, 20, 0],
+                        borderColor: '#64FFDA',
+                        backgroundColor: 'rgba(100, 255, 218, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Actual Economic Market Value',
+                        data: [100, 70, 35, 18, 8, 2],
+                        borderColor: '#FF6B6B',
+                        backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        fill: true,
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: sharedTooltipCallback
+                },
+                scales: {
+                    x: { grid: { color: '#233554' } },
+                    y: {
+                        grid: { color: '#233554' },
+                        title: { display: true, text: '% of Initial Collateral Value', color: '#8892B0' }
+                    }
+                }
+            }
+        });
+
+        // 4. IMF Stress Test Doughnut Chart
+        const stressRawLabels = ['Baseline Weak Banking Assets', 'Additional Stressed Weak Assets', 'Resilient Capital Assets'];
+        const stressLabels = stressRawLabels.map(wrapLabel);
+
+        const ctxStress = document.getElementById('stressTestChart').getContext('2d');
+        new Chart(ctxStress, {
+            type: 'doughnut',
+            data: {
+                labels: stressLabels,
+                datasets: [{
+                    data: [18, 4, 78],
+                    backgroundColor: ['#FFD166', '#FF6B6B', '#0077B6'],
+                    borderColor: '#112240',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right' },
+                    tooltip: sharedTooltipCallback
+                },
+                cutout: '65%'
+            }
+        });
+    </script>
+</body>
+</html>
